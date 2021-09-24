@@ -1,1 +1,13 @@
-<h1>Scraping news sites without API</h1>
+<h1> Scraping news sites without API </h1>
+<h2> <%= params[:search] %> </h2>
+
+<%= form_with method: :get do |form| %>
+  <%= form.text_field :search %>
+  <%= form.submit "Submit" %>
+<% end %>
+
+<div>
+<% @article_hash.each do |key, value| %>
+  <a href="<%=value%>"> <%=key%> </a> <br/>
+<% end %>
+</div>
